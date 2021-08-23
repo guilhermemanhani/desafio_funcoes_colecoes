@@ -123,6 +123,15 @@ void main() {
   print('Mais velho: ${listSemDuplicado.last}');
 
   // resolucao Rahman
+
+  final pessoaOrdenada = [...pessoasSemDuplicado];
+  pessoaOrdenada.sort((p1, p2) {
+    final idadeP1 = int.tryParse(p1[1]) ?? 0;
+    final idadeP2 = int.tryParse(p2[1]) ?? 0;
+    return idadeP2.compareTo(idadeP1);
+  });
+  final pessoamaisVelha = pessoaOrdenada.first;
+  print(pessoamaisVelha);
 }
 
 void apresentarPeloNome(List lista) {
